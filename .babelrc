@@ -1,0 +1,5 @@
+{
+  "presets": ["env"]
+}
+
+//RobbCorrea: In this case, ["env"] instructs Babel to transpile any code from versions ES6 and later.
