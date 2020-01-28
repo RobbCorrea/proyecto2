@@ -3,3 +3,5 @@
 }
 
 //RobbCorrea: In this case, ["env"] instructs Babel to transpile any code from versions ES6 and later.
+//You will find "build" as a test property in package.json/scripts for babel transpilation. 
+//"build" executes transpilation on CLI with $ npm run build.
