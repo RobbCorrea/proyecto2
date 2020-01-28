@@ -1,6 +1,5 @@
 const passport = require("../config/passport");
 const User = require("../models/User");
-const { send } = require("../config/mailer");
 const schema = require("../models/User")
 
 
