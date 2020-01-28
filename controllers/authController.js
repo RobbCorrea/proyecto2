@@ -1,32 +1,62 @@
-const User = require('../models/User')
-const Profile = require('../models/Profile')
+const passport = require("../config/passport");
+const User = require("../models/User");
+const { send } = require("../config/mailer");
+const schema = require("../models/User")
 
-exports.signupForm = (req, res) => {
-  res.render('auth/signup')
-}
-
-exports.signup = async (req, res) => {
-  const {email, password} = req.body
-
-  console.log({email, password})
-  const profile = await Profile.create({})
-  User.register(new User({email, profile}), password, function(err, account) {
-    if (err) {
-      return res.json(err)
-    }
-    return res.redirect('/auth/login')
-  })
-}
-
-exports.loginForm = (req, res) => {
-  res.render('auth/login')
-}
 
 exports.login = (req, res) => {
-  res.redirect('/profile')
-}
+  passport.authenticate("local", (err, user, info = {}) => {
+    const { message: error } = info;
+    if (error) {
+      return res.render("login", { error });
+    }
 
-exports.logout = (req, res) => {
-  req.logout()
-  res.redirect('/auth/login')
-}
+    req.login(user, err => {
+      res.redirect("/profile");
+    });
+  })(req, res);
+};
+
+exports.signup = (req, res) => {
+  const { username, email, password, confirmPass, role } = req.body;
+
+  if (password !== confirmPass) {
+    console.log("pass not the same");
+    let error = "Make sure enter same passwords in both fields";
+    return res.render("register", { title: "SignUp", error });
+  }
+
+  if (!password || !username || !email || !confirmPass || !role) {
+    console.log("some field is blank");
+    let error = "All fields must be filled";
+    return res.render("register", { title: "SignUp", error });
+  }
+ 
+ if(password.length <8 || !password.match(/[a-z]/) || !password.match(/[A-Z]/) ||!password.match(/[0-9]/) || !password.match(/(^[a-zA-Z0-9]+$)/i)) {
+ console.log("not a valid password"); 
+ let error = "Not a valid password";
+ return res.render("register", { title: "SignUp", error});
+ }
+
+
+ User.register({ username, email }, password)
+ .then(usr => {
+   const options = {
+     filename: "register",
+     email: usr.email,
+     message: "Valida tu correo",
+     subject: "Confirma correo"
+   };
+   send(options);
+   req.login(usr, errorMessage => {
+     if (errorMessage)
+       return res.render("register", { title: "Sign Up", errorMessage });
+     res.redirect("/home");
+   });
+ })
+ .catch(errorMessage =>
+   res.render("register", { title: "Sign Up", errorMessage })
+ );
+};
+
+
