@@ -1,6 +1,6 @@
 const {model, Schema} = require('mongoose')
 
-const profileSchema = new Schema(
+const ratingSchema = new Schema(
   {
     name: String,
     img: {
