@@ -1,84 +1,28 @@
 <!DOCTYPE html>
- 
-<html>
+
 <head>
-    <title>Testing FourSquare</title>
-    <link rel="stylesheet" href="square.css" type="text/css" media="screen" />
-<style>
- 
-body {
-    width: 660px;
-    background: #252525;
-    display: block;
-    margin: 10px auto;
-}
-#foursquare {
-    background: #F0F0F0;
-    width: 640px;
-    height: auto;
-    margin: auto;
-    padding: 1px;
-    display: block;
-    position: absolute;
-    border-radius: 15px;
-}
-    #topleft {
-        background: #747171;
-        width: 300px;
-        height: 300px;
-        margin: 10px;
-        display: block;
-        float: left;
-        border-radius: 15px;    
-    }
-    #topright {
-        background: #747171;
-        width: 300px;
-        height: 300px;
-        margin: 10px;
-        display: block;
-        float: left;
-        border-radius: 15px;    
-    }
-    #bottomleft {
-        background: #747171;
-        width: 300px;
-        height: 300px;
-        margin: 10px;
-        display: block;
-        float: left;
-        clear: left;
-        border-radius: 15px;    
-    }
-    #bottomright {
-        background: #747171;
-        width: 300px;
-        height: 300px;
-        margin: 10px;
-        display: block;
-        float: left;
-        border-radius: 15px;    
-    }
- 
- 
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
- 
-<body>
-  {{{ body }}}
-    <div id="foursquare">
-        <div id="topleft">
-        </div>
-        <div id="topright">
-        </div>
-        <div id="bottomleft">
-        </div>
-        <div id="bottomright">
+<div class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brandz">
+        <a class="navbar-item" href="/">
+            <h1 class="is-size-2">Garnacheando en la CDMX</h1>
+        </a><a class="navbar-burger burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
+    <div class="navbar-menu"
+        id="navbarBasicExample">
+        <div class="navbar-start"><a class="navbar-item" href="/">Inicio</a><a class="navbar-item" href="/products">Puestos</a><a class="navbar-item" href="/products/all">Locatarios</a><a class="navbar-item" href="/profile">Perfil</a>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons"><a class="button is-primary" href="/auth/signup"><strong>Registro</strong></a><a class="button is-light" href="/auth/login">Inicia sesi&oacute;n</a><a class="button is-light is-danger" href="/auth/logout">Salir</a></div>
+                </div>
+            </div>
         </div>
     </div>
- 
- 
- 
- 
-</body>
-</html>
+</div> {{{body}}}
+<script src="/javascripts/script.js"></script>
