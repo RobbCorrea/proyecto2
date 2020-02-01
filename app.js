@@ -56,10 +56,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const auth = require("./routes/auth");
 const index = require('./routes/index');
-
+const profile = require("./routes/profile");
+const puestos = require("./routes/puesto");
 app.use('/', index);
-app.use("/", auth);
-
+app.use("/auth", auth);
+app.use("/profile", profile);
+app.use("/puestos", puestos);
 
 
 module.exports = app;
