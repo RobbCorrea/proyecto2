@@ -1,0 +1,10 @@
+const export
+
+/*
+cron hace tareas cada cierto tiempo. Que vea todos los precios que tiene, hacer
+la suma y dividir entre la cantidad de productos.
+mandar llamar en mi ruta tianweros.findById
+de ahi tomamos todos los articulos que venda
+con un for accedemos a los precios
+el for lo ponemos en una ruta.
+*/

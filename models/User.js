@@ -39,3 +39,4 @@ userSchema.plugin(passportLocalMongoose, {
 });
 
 module.exports = model("User", userSchema);
+module.imports = model("Puesto", puestoSchema);

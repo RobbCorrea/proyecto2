@@ -1,0 +1,57 @@
+{
+  "username": {
+    "type": "String",
+    "unique": "true",
+    "required": "true"
+  },
+  "email": {
+    "type": "String",
+    "unique": "true",
+    "required": "true"
+  },
+  "password": {
+    "type": "String",
+    "required": "true"
+  },
+  "status": {
+    "type": "String",
+    "enum": ["pending", "confirmed"],
+    "default": "pending"
+  },
+  "role": {
+    "type": "String",
+    "enum": ["wero", "locatario"],
+    "required": "true"
+  },
+  "user_picture": "String",
+  "timestamps": "true"
+}
+
+{
+  "username": {
+    "type": "String",
+    "unique": "true",
+    "required": "true"
+  },
+  "email": {
+    "type": "String",
+    "unique": "true",
+    "required": "true"
+  },
+  "password": {
+    "type": "String",
+    "required": "true"
+  },
+  "status": {
+    "type": "String",
+    "enum": ["pending", "confirmed"],
+    "default": "pending"
+  },
+  "role": {
+    "type": "String",
+    "enum": ["wero", "locatario"],
+    "required": "true"
+  },
+  "user_picture": "String",
+  "timestamps": "true"
+}
