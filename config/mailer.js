@@ -18,7 +18,7 @@ exports.sendEmail = async (req, res) => {
   const { email, subject, message } = req.body;
 
   await transporter.sendMail({
-    from: "Mi changarro Cdmx <eveganvita316@gmail.com>",
+    from: "Mi changarro Cdmx <corleonejack7@gmail.com>",
     to: email,
     subject,
     text: message,
