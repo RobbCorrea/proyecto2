@@ -10,6 +10,7 @@ const session      = require("express-session");
 const MongoStore   = require("connect-mongo")(session);
 const passport     = require("./config/passport");
 const connectDB    = require('./config/database');
+const hbs = require("hbs");
 
 connectDB();
 
@@ -41,7 +42,8 @@ app.use(passport.session());
 
 // Express View engine setup
 
-app.use(require('node-sass-middleware')({
+app.use(
+  require('node-sass-middleware')({
   src:  path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   sourceMap: true
