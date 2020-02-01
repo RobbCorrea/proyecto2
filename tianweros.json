@@ -1,0 +1,22 @@
+{
+  "puestos": [
+    {
+      "stallName": "",
+      "location": {
+        "references": "Colonia Roma, esquina Durango y Jalapa, afuera de Oxxo",
+        "address": "Calle Durango Ciudad de Mexico, Mexico"
+      },
+      "products": ["chilaquiles", "tortas de chilaquiles"],
+      "businessHours": "Lunes a domingo. 6:30 AM 11:20 AM"
+    },
+    {
+        "stallName": "",
+        "location": {
+          "references": "Colonia Roma, esquina Durango y Jalapa, afuera de Oxxo",
+          "address": "Calle Durango Ciudad de Mexico, Mexico"
+        },
+        "products": ["jugos", "licuados", "cocteles", "aguas", "aguas frutales"],
+        "businessHours": "Lunes a domingo. 6:30 AM 11:20 AM"
+    }
+  ]
+}

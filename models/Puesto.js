@@ -7,8 +7,7 @@ const puestoSchema = new Schema({
     required:true,
     ref: "User"
   },
-
-  title: {
+  stallName: {
     type: String,
     required:true
   },
@@ -28,18 +27,27 @@ const puestoSchema = new Schema({
       type: String
     },
 
+    references: {
+      type: String
+    },
+
     coordinates: {
       type: Number
     }
   },
 
+  products : [{type: String}],
+
   description: {
+    type: String
+  },
+
+  businessHours : {
     type: String
   },
 
   images: {
     type: String,
-    required:true
   }
 },
 
