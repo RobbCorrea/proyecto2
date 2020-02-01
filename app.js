@@ -10,8 +10,25 @@ const session      = require("express-session");
 const MongoStore   = require("connect-mongo")(session);
 const passport     = require("./config/passport");
 const connectDB    = require('./config/database');
+const hbs          = require('hbs');
 
-connectDB();
+mongoose
+  .connect(process.env.DB || "mongodb://localhost/repaso-dos", {
+    useNewUrlParser: true
+  })
+  .then(x => {
+    console.log(
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
+  })
+  .catch(err => {
+    console.error("Error connecting to mongo", err);
+  });
+
+const app_name = require("./package.json").name;
+const debug = require("debug")(
+  `${app_name}:${path.basename(__filename).split(".")[0]}`
+);
 
 const app = express();
 
@@ -41,7 +58,8 @@ app.use(passport.session());
 
 // Express View engine setup
 
-app.use(require('node-sass-middleware')({
+app.use(
+  require('node-sass-middleware')({
   src:  path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   sourceMap: true
@@ -52,14 +70,28 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
+hbs.registerPartials(path.join(__dirname, "/views/partials"));
+hbs.registerHelper("ifCond", function(v1, v2, options) {
+  console.log(String(v1) === String(v2));
+  if (String(v1) === String(v2)) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
 
+
+
+// default value for title local
+app.locals.title = 'HEY WERO CDMX';
 
 const auth = require("./routes/auth");
 const index = require('./routes/index');
-
+const profile = require("./routes/profile");
+const puestos = require("./routes/puesto");
 app.use('/', index);
-app.use("/", auth);
-
+app.use("/auth", auth);
+app.use("/profile", profile);
+app.use("/puestos", puestos);
 
 
 module.exports = app;
