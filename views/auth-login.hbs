@@ -1,0 +1,21 @@
+<html>
+    <form method="POST" action="">
+        <h2>Login</h2>
+        <p>Username</p>
+        <input type="text" id="name">
+        <p>Password</p>
+        <input type="text" id="password">
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    
+    <script>
+        const button = document.getElementById('submit');
+        button.addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const capital = document.getElementById('capital').value;
+            const languages = document.getElementById('languages').value;
+            console.log(name);
+            axios.post('/new-country', {name, capital, languages}).then(res => location.replace("/"));
+        });
+    </script>
+</html>
