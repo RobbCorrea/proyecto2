@@ -63,6 +63,8 @@ hbs.registerHelper("ifCond", function(v1, v2, options) {
 
 
 
+// default value for title local
+app.locals.title = 'HEY WERO CDMX';
 
 const auth = require("./routes/auth");
 const index = require('./routes/index');
