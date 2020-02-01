@@ -9,9 +9,10 @@ cloudinary.config({
 })
 
 const storage = cloudinaryStorage({
-  folder: '',
   cloudinary,
-  allowedFormats: ['png', 'jpg'],
+  folder: "garnachas",
+  cloudinary,
+  allowedFormats: ['png', 'jpg','jpeg'],
   filename: (req, file, cb) => {
     cb(null, file.originalname)
   }

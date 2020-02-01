@@ -26,6 +26,7 @@ const userSchema = new Schema(
     role: {
       type: String,
       enum: ["wero", "locatario"],
+      default:"wero",
       required: true
     },
     user_picture: String
