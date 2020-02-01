@@ -1,27 +1,53 @@
-const {model, Schema} = require('mongoose')
+const mongoose = require("mongoose");
+const { Schema, model } = mongoose;
 
-const puestoSchema = new Schema(
-  {
-    name: String,
-    price: Number,
-    description: String,
-    Aaveragerating: Number,
-    photo: {
+const puestoSchema = new Schema({
+  owner: {
+    type: Schema.Types.ObjectId,
+    required:true,
+    ref: "User"
+  },
+
+  title: {
+    type: String,
+    required:true
+  },
+
+  price:{
+    type:Number,
+    required:true
+  },
+
+  location: {
+    type: {
       type: String,
-      default:
-        ""
+      default:"Point"
     },
-    owner: {
-      ref: 'User',
-      type: Schema.Types.ObjectId
+
+    address: {
+      type: String
+    },
+
+    coordinates: {
+      type: Number
     }
   },
-  {
-    timestamps: {
-      createdAt: 'createdAt',
-      updatedAt: 'updatedAt'
-    }
-  }
-)
 
-module.exports = model('Puesto', puestoSchema)
+  description: {
+    type: String
+  },
+
+  images: {
+    type: String,
+    required:true
+  }
+},
+
+{ timestamps: true}
+);
+
+puestoSchema.index({
+  location: "2dsphere"
+});
+
+module.exports = mongoose.model("Puesto", puestoSchema)
