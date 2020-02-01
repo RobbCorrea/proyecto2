@@ -52,6 +52,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
+hbs.registerPartials(path.join(__dirname, "/views/partials"));
+hbs.registerHelper("ifCond", function(v1, v2, options) {
+  console.log(String(v1) === String(v2));
+  if (String(v1) === String(v2)) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
+
 
 
 const auth = require("./routes/auth");
