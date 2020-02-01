@@ -155,12 +155,12 @@ button.social-signin.google {
 }
 
 /* Control the left side */
-.left {
+.left-home {
   left: 0;
   background-color:white;
 }
 
-.right {
+.right-home {
   right: 0;
   background-color: gray;
 }
@@ -175,4 +175,10 @@ button.social-signin.google {
 
 .topBar {
   background-color: yellow;
+}
+
+.login {
+  background-color: yellow;
+  width: 100vw;
+  height: 100vh;
 }
