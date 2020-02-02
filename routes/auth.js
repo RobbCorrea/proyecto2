@@ -19,7 +19,7 @@ router.post("/login", (req, res) => {
     }
 
     if(!user) {
-      return res.render("auth-form", { err});
+      return res.render("auth-login", { err});
     }
     req.logIn(user, err => {
       if(err) {
