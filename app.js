@@ -13,7 +13,7 @@ const connectDB    = require('./config/database');
 const hbs = require("hbs");
 
 mongoose
-  .connect(process.env.DB || "mongodb://localhost/repaso-dos", {
+  .connect(process.env.DB || "mongodb://localhost/test", {
     useNewUrlParser: true
   })
   .then(x => {
