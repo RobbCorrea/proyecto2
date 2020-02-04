@@ -1,2 +1,53 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<div class="navbar topBar">
+  <div>
+    <a>
+      <h1 class="is-size-2">Garnacheando en la CDMX</h1>
+    </a>
+    <a class="navbar-burger burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu" id="navbarBasicExample">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/">Inicio</a>
+      <a class="navbar-item" href="/products">Puestos</a>
+      <a class="navbar-item" href="/products/all">Locatarios</a>
+      <a class="navbar-item" href="/profile">Perfil</a>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="/auth/signup"><strong>Registro</strong></a>
+            <a class="button is-light" href="/auth/login">Inicia sesión</a>
+            <a class="button is-light is-danger" href="/auth/logout">Salir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="split left-home">
+    <div class="centered">
+      <h2>Info</h2>
+    </div>
+  </div>
+  <div class="split right-home">
+    <div class="centered">
+      <h2>Map</h2>
+    </div>
+  </div>
+</div>
+
+{{{body}}}
