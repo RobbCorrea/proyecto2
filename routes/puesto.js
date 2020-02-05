@@ -30,7 +30,7 @@ router.post("/new", isAuth, uploader.array("images"), (req, res) => {
     images = req.files.map(file => file.secure_url);
 
     const puesto = {
-      owner,
+      locatario,
       price,
       name,
       description,
