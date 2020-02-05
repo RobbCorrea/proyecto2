@@ -10,7 +10,6 @@ const session      = require("express-session");
 const MongoStore   = require("connect-mongo")(session);
 const passport     = require("./config/passport");
 const connectDB    = require('./config/database');
-const hbs          = require('hbs');
 
 mongoose
   .connect(process.env.DB || "mongodb://localhost/test", {
