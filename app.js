@@ -76,7 +76,7 @@ app.locals.title = 'HEY WERO CDMX';
 
 const auth = require("./routes/auth");
 const index = require('./routes/index');
-const puestos = require("./routes/puesto");
+const puesto = require("./routes/puesto");
 
 app.use('/', index);
 app.use("/", auth);

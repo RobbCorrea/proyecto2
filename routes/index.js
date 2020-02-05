@@ -17,15 +17,15 @@ router.get("/home", isAuth, (req, res, next) => {
 router.get("/profile", isAuth, (req, res, next) => {
   const { user } = req;
  
-  Tatoo.find({ owner: user._id }).then(tatoos => {
-    console.log(tatoos);
-    res.render("profile", { title: "Profile", user, tatoos, help });
+  Puesto.find({ owner: user._id }).then(puestos => {
+    console.log(puestos);
+    res.render("profile", { title: "Profile", user, puestos, help });
   });
 
 
   router.get("/card", isAuth, (req, res, next) => {
     const { user } = req;
-    res.render("pruebaCard", { user });
+    res.render("puestoCard", { user });
   });
 });
 
