@@ -58,8 +58,5 @@ const puestoSchema = new Schema({
 { timestamps: true}
 );
 
-puestoSchema.index({
-  location: "2dsphere"
-});
 
-module.exports = mongoose.model("Puesto", puestoSchema)
+module.exports = mongoose.model("Puesto", puestoSchema);
