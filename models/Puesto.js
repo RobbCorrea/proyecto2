@@ -2,19 +2,24 @@ const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
 const puestoSchema = new Schema({
+  
   owner: {
     type: Schema.Types.ObjectId,
-    required:true,
     ref: "User"
   },
+
   stallName: {
     type: String,
     required:true
   },
 
   price:{
-    type:Number,
-    required:true
+    type: String,
+    required:false
+  },
+
+  priceMath: {
+    type:Number
   },
 
   location: {
@@ -46,16 +51,12 @@ const puestoSchema = new Schema({
     type: String
   },
 
-  images: {
-    type: String,
-  }
+  images: [{type: String}]
+
 },
 
 { timestamps: true}
 );
 
-puestoSchema.index({
-  location: "2dsphere"
-});
 
-module.exports = mongoose.model("Puesto", puestoSchema)
+module.exports = mongoose.model("Puesto", puestoSchema);
