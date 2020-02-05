@@ -4,7 +4,6 @@ block content
     .uk-container.uk-container-small
       form(action="/tatoo/new"  enctype="multipart/form-data" method="post")
         fieldset.uk-fieldset
-          //- legend.uk-legend New Tatoo Information
           if errorMessage
             .uk-flex.uk-flex-center.uk-alert-danger.uk-width-1-1(uk-alert)
               p.authErr #{errorMessage}
