@@ -16,7 +16,7 @@ router.get("/home", isAuth, (req, res, next) => {
 
 router.get("/profile", isAuth, (req, res, next) => {
   const { user } = req;
- 
+ let help = {};
   Puesto.find({ owner: user._id }).then(puestos => {
     console.log(puestos);
     res.render("profile", { title: "Profile", user, puestos, help });
