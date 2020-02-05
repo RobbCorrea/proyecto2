@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const passport = require("passport");
-const nodemailer = require("../config/mailer");
+const nodemailer = require("nodemailer");
 
 router.get("/login", (req, res) => {
   res.render("auth-login", { action: "Login"});
@@ -44,7 +44,7 @@ router.post("/register", (req, res) => {
   for (let i=0; i< 25; i++) {
     token += characters[Math.floor(Math.random() * characters.length)];
   }
-  const cofirmationCode = token;
+  const confirmationCode = token;
 
   const user = { ...req.body, confirmationCode };
 
@@ -58,11 +58,14 @@ router.post("/register", (req, res) => {
         text: `Hello ${data.username}
         Please wero dale click to confirm your HEYWERO account:
         ${req.headers.origin}/auth/confirm/${data.confirmationCode}
-        Thank you.`
+        Thanks!!.`
       });
-      res.render("auth-login", { err });
-    });
-});
+        res.render("email-confirm", { data });
+      })
+      .catch(err => {
+        res.render("auth-login", { err });
+      });
+  });
 
 router.get("/confirm/:confirmCode", (req, res) => {
   User.find({ confirmationCode: req.params.confirmationCode })
@@ -80,6 +83,14 @@ router.get("/confirm/:confirmCode", (req, res) => {
 router.get("/loguot", (req, res) => {
   reg.logout();
   res.redirect("/");
+});
+
+const transporter = nodemailer.createTransport({
+  service: "Gmail",
+  auth: {
+    user: process.env.MAILER_USER,
+    pass: process.env.MAILER_PASS
+  }
 });
 
 module.exports = router;

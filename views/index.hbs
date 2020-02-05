@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
+
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="mapbox://styles/edie316/ck68rl8lk1l341ir45hedbllh">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
@@ -22,13 +28,13 @@
   <div class="navbar-menu" id="navbarBasicExample">
     <div class="navbar-start">
       <a class="navbar-item" href="/">Inicio</a>
-      <a class="navbar-item" href="/products">Puestos</a>
-      <a class="navbar-item" href="/products/all">Locatarios</a>
+      <a class="navbar-item" href="/puestos">Puestos</a>
+      <a class="navbar-item" href="/puestos/all">Locatarios</a>
       <a class="navbar-item" href="/profile">Perfil</a>
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary" href="/auth/signup"><strong>Registro</strong></a>
+            <a class="button is-primary" href="/auth/register"><strong>Registro</strong></a>
             <a class="button is-light" href="/auth/login">Inicia sesión</a>
             <a class="button is-light is-danger" href="/auth/logout">Salir</a>
           </div>
@@ -49,9 +55,3 @@
     </div>
   </div>
 </div>
-
-<<<<<<< HEAD
-{{{body}}}
-=======
-{{{body}}}
->>>>>>> 98ca91e84768da91cb0ff62f617c070bf47079ce

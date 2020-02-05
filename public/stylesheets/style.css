@@ -142,37 +142,4 @@ button.social-signin.twitter {
 button.social-signin.google {
   background: #DD4B39; }
 
-.split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px; }
-
-/* Control the left side */
-.left-home {
-  left: 0;
-  background-color: white; }
-
-.right-home {
-  right: 0;
-  background-color: gray; }
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
-
-.topBar {
-  background-color: yellow; }
-
-.login {
-  background-color: yellow;
-  width: 100vw;
-  height: 100vh; }
-
 /*# sourceMappingURL=style.css.map */
