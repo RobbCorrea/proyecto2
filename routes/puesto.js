@@ -53,3 +53,5 @@ router.post("/new", isAuth, uploader.array("images"), (req, res) => {
     });
   }
 });
+
+module.exports = router;
