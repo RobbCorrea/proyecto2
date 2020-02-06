@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <style>
+  #map{
+    height: 400px;
+    width: 50%;
+  }
+  </style>
+</head>
+<body>
+    
+  <div id="map"></div>
+
+  <script>
+    function initMap() {
+        //opciones
+        let options = {
+            zoom:15,
+            center: {
+            lat:19.421130000,
+            lng:-99.163280000
+            }
+        }
+
+        //nuevo mapa
+        let map = new google.maps.Map(
+        document.getElementById('map'), options);
+
+                //nuevo marcador 
+                var marker1 = {lat:19.421130000,
+            lng:-99.163280000};
+        var marker = new google.maps.Marker({position: marker1, map: map, icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"});
+
+                //nuevo marcador 
+                var marker2 = {lat:19.422130000,
+            lng:-99.164280000};
+        var marker = new google.maps.Marker({position: marker2, map: map});
+    }
+  </script>
+
+
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUgrSI6gFn6ym26LSyNLv9lKGLQy4BXR4&callback=initMap">
+  </script>
+</body>
+</html>
