@@ -72,11 +72,32 @@
           }
         }
         
-        addMarker({
+        //array de marcadores
+        let markers = [
+        {
             coords:{lat:19.421130000,lng:-99.163280000},
             iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
             content: '<h1> Ironhack </h1>'
-        });
+        },
+        {
+            coords:{lat:19.423130000,lng:-99.164280000},
+            iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+            content: '<h1> Puesto 2 </h1>'
+        },
+        {
+            coords:{lat:19.421130000,lng:-99.164280000},
+            iconImage:'',
+            content: '<h1> Puesto 2 </h1>'
+        }
+        ];
+
+        // loop para los marcadores
+        for(let i = 0; i < markers.length; i++) {
+          // añadir marcador
+          addMarker(markers[i]);
+        }
+
+
     
 
     }
