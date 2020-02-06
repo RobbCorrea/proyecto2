@@ -27,37 +27,42 @@
             }
         }
 
-    //nuevo mapa
-    let map = new google.maps.Map(
-    document.getElementById('map'), options);
+        //nuevo mapa
+        let map = new google.maps.Map(
+        document.getElementById('map'), options);
 
-    /**
-    //nuevo marcador 
-    var mark1 = {lat:19.421130000,
-        lng:-99.163280000};
-    var marker = new google.maps.Marker({position: mark1, map: map, icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"});
+        /**
+        //nuevo marcador 
+        var mark1 = {lat:19.421130000,
+            lng:-99.163280000};
+        var marker = new google.maps.Marker({position: mark1, map: map, icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"});
 
 
-    let infoWindow = new google.maps.InfoWindow({
-        content:'<h1>Puesto 1</h1>'
-    });
+        let infoWindow = new google.maps.InfoWindow({
+            content:'<h1>Puesto 1</h1>'
+        });
 
-    marker.addListener('click', function(){
-      infoWindow.open(map, marker);
-    });
-    */
+        marker.addListener('click', function(){
+        infoWindow.open(map, marker);
+        });
+        */
 
-    addMarker({lat:19.421130000,
-        lng:-99.163280000});
+        //funcion para añadir marcador
+        function addMarker(properties) {
+            let marker = new google.maps.Marker({
+                position: properties.coords,
+                map: map,
+                icon:properties.iconImage});
+        }
 
-    //funcion para añadir marcador
-    function addMarker(coords) {
-        let marker = new google.maps.Marker({
-            position: coords,
-            map: map,
-            icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"});
-
-    }
+        addMarker({
+            coords:{lat:19.421130000,lng:-99.163280000},
+            iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        });
+        
+        addMarker({
+            coords:{lat:19.421130000, lng:-99.163280000}
+        });
 
 
     }
