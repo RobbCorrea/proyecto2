@@ -88,10 +88,12 @@ const auth = require("./routes/auth");
 const index = require('./routes/index');
 const profile = require("./routes/profile");
 const puestos = require("./routes/puesto");
+const mapTest = require("./routes/mapTest");
 app.use('/', index);
 app.use("/auth", auth);
 app.use("/profile", profile);
 app.use("/puestos", puestos);
+app.use("/mapTest", mapTest);
 
 
 module.exports = app;
