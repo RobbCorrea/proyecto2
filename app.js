@@ -64,11 +64,15 @@ app.locals.title = 'HEY WERO CDMX';
 const auth = require("./routes/auth");
 const index = require('./routes/index');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Nuevo index para home
 const puesto = require("./routes/puesto");
 
 app.use('/', index);
 app.use("/", auth);
 app.use("/puesto", puesto);
+<<<<<<< HEAD
 =======
 const profile = require("./routes/profile");
 const puestos = require("./routes/puesto");
@@ -79,6 +83,8 @@ app.use("/profile", profile);
 app.use("/puestos", puestos);
 app.use("/mapTest", mapTest);
 >>>>>>> testing for the map function
+=======
+>>>>>>> Nuevo index para home
 
 
 module.exports = app;

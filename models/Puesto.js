@@ -11,6 +11,7 @@ const puestoSchema = new Schema({
   address: {type: String,
     required: true,
   },
+<<<<<<< HEAD
     description: String,
     lat: {type:Number, required: true},
     lng: {type:Number, required: true},
@@ -19,3 +20,48 @@ const puestoSchema = new Schema({
   
   const Puesto = mongoose.model('Puesto', puestoSchema);
   module.exports = Puesto;
+=======
+
+  priceMath: {
+    type:Number
+  },
+
+  location: {
+    type: {
+      type: String,
+      default:"Point"
+    },
+
+    address: {
+      type: String
+    },
+
+    references: {
+      type: String
+    },
+
+    coordinates: {
+      type: Number
+    }
+  },
+
+  products : [{type: String}],
+
+  description: {
+    type: String
+  },
+
+  businessHours : {
+    type: String
+  },
+
+  images: [{type: String}]
+
+},
+
+{ timestamps: true}
+);
+
+
+module.exports = mongoose.model("Puesto", puestoSchema);
+>>>>>>> Nuevo index para home
