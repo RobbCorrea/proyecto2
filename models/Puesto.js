@@ -3,7 +3,7 @@ const { Schema, model } = mongoose;
 
 const puestoSchema = new Schema({
   
-  owner: {
+  locatario: {
     type: Schema.Types.ObjectId,
     ref: "User"
   },
