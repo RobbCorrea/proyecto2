@@ -10,10 +10,9 @@ const session      = require("express-session");
 const MongoStore   = require("connect-mongo")(session);
 const passport     = require("./config/passport");
 const connectDB    = require('./config/database');
-const hbs          = require('hbs');
 
 mongoose
-  .connect(process.env.DB || "mongodb://localhost/repaso-dos", {
+  .connect(process.env.DB || "mongodb://localhost/test", {
     useNewUrlParser: true
   })
   .then(x => {
@@ -67,18 +66,8 @@ app.use(
       
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
-
-hbs.registerPartials(path.join(__dirname, "/views/partials"));
-hbs.registerHelper("ifCond", function(v1, v2, options) {
-  console.log(String(v1) === String(v2));
-  if (String(v1) === String(v2)) {
-    return options.fn(this);
-  }
-  return options.inverse(this);
-});
-
 
 
 // default value for title local
@@ -86,6 +75,7 @@ app.locals.title = 'HEY WERO CDMX';
 
 const auth = require("./routes/auth");
 const index = require('./routes/index');
+<<<<<<< HEAD
 const profile = require("./routes/profile");
 const puestos = require("./routes/puesto");
 const mapTest = require("./routes/mapTest");
@@ -94,6 +84,13 @@ app.use("/auth", auth);
 app.use("/profile", profile);
 app.use("/puestos", puestos);
 app.use("/mapTest", mapTest);
+=======
+const puesto = require("./routes/puesto");
+
+app.use('/', index);
+app.use("/", auth);
+app.use("/puesto", puesto);
+>>>>>>> 6e2f61dfc6ca77635e24a7d2546dcc04a7b2c90b
 
 
 module.exports = app;

@@ -3,9 +3,8 @@ const { Schema, model } = mongoose;
 
 const puestoSchema = new Schema({
   
-  owner: {
+  locatario: {
     type: Schema.Types.ObjectId,
-    required:true,
     ref: "User"
   },
 
@@ -59,10 +58,8 @@ const puestoSchema = new Schema({
 { timestamps: true}
 );
 
-puestoSchema.index({
-  location: "2dsphere"
-});
 
+<<<<<<< HEAD
 module.exports = mongoose.model("Puesto", puestoSchema)
 
 /**
@@ -281,3 +278,6 @@ module.exports = mongoose.model("Puesto", puestoSchema)
   ]
 }
  */
+=======
+module.exports = mongoose.model("Puesto", puestoSchema);
+>>>>>>> 6e2f61dfc6ca77635e24a7d2546dcc04a7b2c90b

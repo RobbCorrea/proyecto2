@@ -1,29 +1,28 @@
 const nodemailer = require("nodemailer");
+const pug = require("pug");
+const fs = require("fs");
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.MAILER_USER,
-    pass: process.env.MAILER_PASS
-  }
+    service: "Gmail",
+    auth: {
+        user:process.env.MAILER_USER,
+        pass: process.env.MAILER_PASS
+    }
 });
 
-exports.transporter = transporter;
-
-exports.sendEmailView = (req, res) => {
-  res.render("sendmail");
+const generateHTML = (filename, options) => {
+    const html =pug.compileFile(`${__dirname}/../views/mails/${filename}.pug`);
+    return html(options);
 };
 
-exports.sendEmail = async (req, res) => {
-  const { email, subject, message } = req.body;
-
-  await transporter.sendMail({
-    from: "Mi changarro Cdmx <corleonejack7@gmail.com>",
-    to: email,
-    subject,
-    text: message,
-    html: `<b>${message}<b>`
-  });
-
-  res.render("message", { email, subject, message });
+exports.send = options => {
+    const html = generateHTML(options.filename, options);
+    const mailOptions = {
+        from: "Garnacheando en CDMX <veganvita316@gmail.com",
+        to: options.email,
+        subject: options.subject,
+        message: options.message,
+        html
+    };
+    return transporter.sendMail(mailOptions);
 };

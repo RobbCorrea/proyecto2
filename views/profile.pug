@@ -1,0 +1,11 @@
+extends layout
+include mixins/card
+block content
+
+  .uk-section
+    .uk-container
+      <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+        each puesto in puestos
+          +card(puesto)
+
+  
