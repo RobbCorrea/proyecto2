@@ -49,21 +49,35 @@
 
         //funcion para añadir marcador
         function addMarker(properties) {
-            let marker = new google.maps.Marker({
-                position: properties.coords,
-                map: map,
-                icon:properties.iconImage});
-        }
+          let marker = new google.maps.Marker({
+              position: properties.coords,
+              map: map,
+              icon:properties.iconImage
+          });
 
-        addMarker({
-            coords:{lat:19.421130000,lng:-99.163280000},
-            iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-        });
+          //checar si tiene icono
+          if(properties.iconImage) {
+            marker.setIcon(properties.iconImage);
+          }
+          
+          //checar el contenido
+          if(properties.content) {
+            let infoWindow = new google.maps.InfoWindow({
+            content:properties.content
+            });
+
+            marker.addListener('click', function(){
+              infoWindow.open(map, marker);
+            });
+          }
+        }
         
         addMarker({
-            coords:{lat:19.421130000, lng:-99.163280000}
+            coords:{lat:19.421130000,lng:-99.163280000},
+            iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+            content: '<h1> Ironhack </h1>'
         });
-
+    
 
     }
   </script>
