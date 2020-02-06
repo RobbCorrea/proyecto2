@@ -12,11 +12,22 @@ a {
   width: 40%; }
 
 .authErr {
+  text-align: center;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+  background: url("https://goo.gl/YbktSj");
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 2px 2px 0; }
+
+.right .loginwith {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #FFF;
   text-align: center; }
 
-<<<<<<< HEAD
-/*# sourceMappingURL=style.css.map */
-=======
 button.social-signin {
   margin-bottom: 20px;
   width: 220px;
@@ -48,8 +59,6 @@ button.social-signin.google {
   background: #DD4B39; }
 
 /*# sourceMappingURL=style.css.map */
-
-
 .split {
   height: 100%;
   width: 50%;
@@ -57,37 +66,32 @@ button.social-signin.google {
   z-index: 1;
   top: 0;
   overflow-x: hidden;
-  padding-top: 20px;
-}
+  padding-top: 20px; }
 
 /* Control the left side */
 .left-home {
   width: 30%;
   left: 0;
-  background-color:white;
-}
+  background-color: white; }
 
 .right-home {
   width: 70%;
   right: 0;
-  background-color: gray;
-}
+  background-color: gray; }
 
 .centered {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
-}
+  text-align: center; }
 
 .topBar {
-  background-color: yellow;
-}
+  background-color: yellow; }
 
 .login {
   background-color: yellow;
   width: 100vw;
-  height: 100vh;
-}
->>>>>>> 87163320c21823d1b22a99c648429ea1f3fcdfec
+  height: 100vh; }
+
+/*# sourceMappingURL=style.css.map */
