@@ -28,29 +28,22 @@
         }
 
         //nuevo mapa
-    let map = new google.maps.Map(document.getElementById('map'), options);
+        let map = new google.maps.Map(
+        document.getElementById('map'), options);
 
                 //nuevo marcador 
-    let mark1 = {lat:19.421130000,
-      lng:-99.163280000};
-    let marker = new google.maps.Marker({position: mark1, map: map, icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"});
-
-     /**      //nuevo marcador 
-    let marker2 = {lat:19.422130000,
-      lng:-99.164280000};
-    let mark2 = new google.maps.Marker({position: marker2, map: map});
-        */
+                var mark1 = {lat:19.421130000,
+            lng:-99.163280000};
+        var marker = new google.maps.Marker({position: mark1, map: map, icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"});
 
 
-    let infoWindow = new google.maps.infoWindow({
+        let infoWindow = new google.maps.InfoWindow({
       content:'<h1>Puesto 1</h1>'
     });
 
     marker.addListener('click', function(){
       infoWindow.open(map, marker);
     });
-
-
 
 
     }
