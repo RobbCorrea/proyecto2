@@ -9,20 +9,8 @@ const path         = require('path');
 const session      = require("express-session");
 const MongoStore   = require("connect-mongo")(session);
 const passport     = require("./config/passport");
-const connectDB    = require('./config/database');
-
-mongoose
-  .connect(process.env.DB || "mongodb://localhost/test", {
-    useNewUrlParser: true
-  })
-  .then(x => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch(err => {
-    console.error("Error connecting to mongo", err);
-  });
+const connectDB    = require('./config/database')
+connectDB();
 
 const app_name = require("./package.json").name;
 const debug = require("debug")(
