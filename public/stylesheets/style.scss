@@ -9,7 +9,21 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: white;
+}
+
+#navbarBasicExample.navbar-menu
+    .navbar-start {
+      margin: 10px;
+      color: white;
+    }
+
+    a.navbar-item{
+      color: white;
+    }
+
+p {
+  font-size: 24px;
 }
 
 .authform {
@@ -106,11 +120,11 @@ button.social-signin.google {
 }
 
 .topBar {
-  background-color: yellow;
+  background-color: #0091ff;
 }
 
 .login {
-  background-color: yellow;
+  background-color: #0091ff;
   width: 100vw;
   height: 100vh;
 }

@@ -31,5 +31,17 @@
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
-  }
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ironhack-Project-2-PT/proyecto2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ironhack-Project-2-PT/proyecto2/issues"
+  },
+  "homepage": "https://github.com/Ironhack-Project-2-PT/proyecto2#readme",
+  "description": ""
 }

@@ -10,8 +10,12 @@ html(lang="en")
     link(rel="stylesheet" href="/stylesheets/style.css")
 
 
-<script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+  //-AGREGUE ESTO
+  style.
+    body {
+    background: #000080;
+    }
+  //-HASTA AQUI
 
   body
 
@@ -24,36 +28,36 @@ html(lang="en")
               .uk-navbar-dropdown
                 ul.uk-nav.uk-navbar-dropdown-nav
                   li
-                    a(href='/profile') Profile
-                  li
-                    a(href='/logout') Logout
+                    a(href='/logout') Salir
           else 
             li.uk-active
-                 a(href='/signup') Signup
+                 a(href='/signup') Registro
+                 //-CAMBIE ESTA PALABRA
             li.uk-active
-                 a(href='/login') Login
+                 a(href='/login') Entrar
 
       .uk-navbar-right
         ul.uk-navbar-nav
           li
-            a(href='#') CDMX
+            a(href='#') Uso
             .uk-navbar-dropdown
               ul.uk-nav.uk-navbar-dropdown-nav
                 li.uk-active
-                  a(href='#') Active
+                  a(href='#') Para encontrar tu antojo
                 li
-                  a(href='#') Item
-                li.uk-nav-header Header
+                  a(href='/home') Busca Comidita
+                li.uk-nav-header Sobre heywero
                 li
-                  a(href='#') Item
+                  a(href='queEsHeyWero') Qué es heywero
                 li
-                  a(href='#') Item
+                  a(href='comoUsarHeyWero') Cómo usar heywero
                 li.uk-nav-divider
                 li
-                  a(href='#') Item
+                  a(href='tecnologiasHeyWero') Tecnologías heywero
 
 
     block content
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js")
+    //-script(src="/javascripts/script.js")
