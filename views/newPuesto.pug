@@ -1,111 +1,44 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  meta(http-equiv='X-UA-Compatible' content='ie=edge')
-  title Home
-  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css')
-  link(rel='stylesheet' href='/stylesheets/style.css')
-  style.
-    #map{
-    height: 100%;
-    width: 100%;
-    }
-.navbar.topBar
-  div
-    a
-      h1.is-size-2 Garnacheando en la CDMX
-    a.navbar-burger.burger(role='button' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample')
-      span(aria-hidden='true')
-      span(aria-hidden='true')
-      span(aria-hidden='true')
-  #navbarBasicExample.navbar-menu
-    .navbar-start
-      a.navbar-item(href='/') Inicio
-      a.navbar-item(href='/products') Comidas
-      a.navbar-item(href='/products/all') Tianweros
-      a.navbar-item(href='/profile') Tu perfil
-      .navbar-end
-        .navbar-item
-          .buttons
-            a.button.is-primary(href='/auth/signup')
-              strong Registro
-            a.button.is-light(href='/auth/login') Inicia sesi&oacute;n
-            a.button.is-light.is-danger(href='/auth/logout') Salir
-div
-  .row
-    .split.left-home.column
-      h2 Info
-  .split.right-home.column
-    #map.centered
-script.
-  function initMap() {
-  //opciones
-  let options = {
-  zoom:15,
-  center: {
-  lat:19.421130000,
-  lng:-99.163280000
-  }
-  }
-  //nuevo mapa
-  let map = new google.maps.Map(
-  document.getElementById('map'), options);
-  /**
-  //nuevo marcador
-  var mark1 = {lat:19.421130000,
-  lng:-99.163280000};
-  var marker = new google.maps.Marker({position: mark1, map: map, icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"});
-  let infoWindow = new google.maps.InfoWindow({
-  content:'<h1>Puesto 1</h1>'
-  });
-  marker.addListener('click', function(){
-  infoWindow.open(map, marker);
-  });
-  */
-  //funcion para añadir marcador
-  function addMarker(properties) {
-  let marker = new google.maps.Marker({
-  position: properties.coords,
-  map: map,
-  icon:properties.iconImage
-  });
-  //checar si tiene icono
-  if(properties.iconImage) {
-  marker.setIcon(properties.iconImage);
-  }
-  //checar el contenido
-  if(properties.content) {
-  let infoWindow = new google.maps.InfoWindow({
-  content:properties.content
-  });
-  marker.addListener('click', function(){
-  infoWindow.open(map, marker);
-  });
-  }
-  }
-  //array de marcadores
-  let markers = [
-  {
-  coords:{lat:19.421130000,lng:-99.163280000},
-  iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-  content: '<h1> Ironhack </h1>'
-  },
-  {
-  coords:{lat:19.423130000,lng:-99.164280000},
-  iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-  content: '<h1> Puesto 2 </h1>'
-  },
-  {
-  coords:{lat:19.421130000,lng:-99.164280000},
-  iconImage:'',
-  content: '<h1> Puesto 3 </h1>'
-  }
-  ];
-  // loop para los marcadores
-  for(let i = 0; i < markers.length; i++) {
-  // añadir marcador
-  addMarker(markers[i]);
-  }
-  }
-script(async='' defer='' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBUgrSI6gFn6ym26LSyNLv9lKGLQy4BXR4&callback=initMap')
+form(action='/puesto/new' method='post')
+  label(for='') Nombre:
+  input(type='text' name='name')
+  label(for='') Platillo principal:
+  input(type='text' name='mainDish')
+  label(for='') Hora de Apertura:
+  input(type='time' name='openingTime')
+  label(for='') Hora de Cierre:
+  input(type='time' name='closingTime')
+  label(for='') Precio Promedio:
+  input(type='number' min='0' max='100' step="any" name='averagePrice')
+  label(for='') D&iacute;as que abre:
+  label
+    input(type='checkbox' name='diaBox1')
+    | Lunes
+  label
+    input(type='checkbox' name='diaBox2')
+    | Martes
+  label
+    input(type='checkbox' name='diaBox3')
+    | Mi&eacute;rcoles
+  label
+    input(type='checkbox' name='diaBox4')
+    | Jueves
+  label
+    input(type='checkbox' name='diaBox5')
+    | Viernes
+  label
+    input(type='checkbox' name='diaBox6')
+    | S&aacute;bado
+  label
+    input(type='checkbox' name='diaBox7')
+    | Domingo
+  label(for='') Direcci&oacute;n:
+  input(type='text' name='address')
+  label(for='') Descripci&oacute;n:
+  input(type='text' name='description')
+  label(for='') Latitud:
+  input(type='number' step="any" name='lat')
+  label(for='') Longitud:
+  input(type='number' step="any" name='lng')
+  label(for='') Imagen:
+  input(type='file' name='image')
+  button(type='submit') A&ntilde;adir
