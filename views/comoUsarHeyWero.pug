@@ -1,0 +1,72 @@
+
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Home
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css')
+  link(rel='stylesheet' href='/stylesheets/style.css')
+
+.navbar.topBar
+  div
+    a
+      h1.is-size-2 Cómo usar HeyWero
+    a.navbar-burger.burger(role='button' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample')
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+  #navbarBasicExample.navbar-menu
+    .navbar-start
+      a.navbar-item(href='/home') Búsqueda
+      a.navbar-item(href='/products') Puestos
+      a.navbar-item(href='/products/all') Locatarios
+      a.navbar-item(href='/profile') Perfil
+      
+div
+
+section#about_us.gray_bg.section_padding
+  .container
+    .row
+      .col-md-6.col-sm-6.col-xs-12.wow.fadeInLeft
+        .about_content
+          span 
+          br
+          h2.is-size-3 Total, ¿cómo se usa?
+          br
+          br
+          span
+          p
+            | Al entrar a HeyWero, inscríbete o, si ya estás inscrito, entra con tu firma. 
+          br
+
+          span
+          img(src='https://image.flaticon.com/icons/svg/2250/2250142.svg' height='400' width='400' style='margin:10px auto; display:block;' align='center' alt='')
+
+          span
+          p
+            | Pícale en Uso y luego Buscar Comidita
+
+          br
+
+          span
+          img(src="https://image.flaticon.com/icons/svg/1532/1532688.svg" height='400' width='400' style='margin:10px auto; display:block;' align='center' alt='')
+
+          span
+          p
+            | Pica tu local favorito en el mapa o busca en Puestos.
+          br
+
+          span
+          img(src="https://image.flaticon.com/icons/svg/2275/2275511.svg" height='400' width='400' style='margin:10px auto; display:block;' align='center' alt='')
+          
+          span
+          p
+            | ¡Provecho! También tienes tu perfil. (Ya irá creciendo.)
+
+          span
+          img(src="https://image.flaticon.com/icons/svg/891/891401.svg" height='400' width='400' style='margin:10px auto; display:block;' align='center' alt='')
+
+          span
+          p
+            | Y si eres tianwero, revisa la pestaña "Locatarios".           

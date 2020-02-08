@@ -59,32 +59,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // default value for title local
-app.locals.title = 'HEY WERO CDMX';
+app.locals.title = 'Bienvenido a HEYWERO Ciudad de México';
 
 const auth = require("./routes/auth");
 const index = require('./routes/index');
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Nuevo index para home
 const puesto = require("./routes/puesto");
+const queEsHeyWero = require("./routes/queEsHeyWero");
+const comoUsarHeyWero = require("./routes/comoUsarHeyWero");
+const tecnologiasHeyWero = require("./routes/tecnologiasHeyWero");
 
 app.use('/', index);
 app.use("/", auth);
 app.use("/puesto", puesto);
-<<<<<<< HEAD
-=======
-const profile = require("./routes/profile");
-const puestos = require("./routes/puesto");
-const mapTest = require("./routes/mapTest");
-app.use('/', index);
-app.use("/auth", auth);
-app.use("/profile", profile);
-app.use("/puestos", puestos);
-app.use("/mapTest", mapTest);
->>>>>>> testing for the map function
-=======
->>>>>>> Nuevo index para home
+app.use("/queEsHeyWero", queEsHeyWero);
+app.use("/comoUsarHeyWero", comoUsarHeyWero);
+app.use("/tecnologiasHeyWero", tecnologiasHeyWero);
+
 
 
 module.exports = app;

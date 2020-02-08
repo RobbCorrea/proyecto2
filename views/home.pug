@@ -14,7 +14,7 @@ head
 .navbar.topBar
   div
     a
-      h1.is-size-2 Garnacheando en la CDMX
+      h1.is-size-2 El busca-garnachas
     a.navbar-burger.burger(role='button' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample')
       span(aria-hidden='true')
       span(aria-hidden='true')
@@ -22,15 +22,12 @@ head
   #navbarBasicExample.navbar-menu
     .navbar-start
       a.navbar-item(href='/') Inicio
-      a.navbar-item(href='/products') Comidas
-      a.navbar-item(href='/products/all') Tianweros
-      a.navbar-item(href='/profile') Tu perfil
+      a.navbar-item(href='/puesto/new') Registra Puesto
+      a.navbar-item(href='/products/all') Locatarios
+      a.navbar-item(href='/profile') Perfil
       .navbar-end
         .navbar-item
           .buttons
-            a.button.is-primary(href='/auth/signup')
-              strong Registro
-            a.button.is-light(href='/auth/login') Inicia sesi&oacute;n
             a.button.is-light.is-danger(href='/auth/logout') Salir
 div
   .row

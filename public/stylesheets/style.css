@@ -6,7 +6,18 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00b7ff; }
+  color: white; }
+
+#navbarBasicExample.navbar-menu
+.navbar-start {
+  margin: 10px;
+  color: white; }
+
+a.navbar-item {
+  color: white; }
+
+p {
+  font-size: 24px; }
 
 .authform {
   width: 40%; }
@@ -87,10 +98,10 @@ button.social-signin.google {
   text-align: center; }
 
 .topBar {
-  background-color: yellow; }
+  background-color: #0091ff; }
 
 .login {
-  background-color: yellow;
+  background-color: #0091ff;
   width: 100vw;
   height: 100vh; }
 

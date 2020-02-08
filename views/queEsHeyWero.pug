@@ -1,0 +1,77 @@
+
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Home
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css')
+  link(rel='stylesheet' href='/stylesheets/style.css')
+
+.navbar.topBar
+  div
+    a
+      h1.is-size-2 Qué es HeyWero
+    a.navbar-burger.burger(role='button' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample')
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+  #navbarBasicExample.navbar-menu
+    .navbar-start
+      a.navbar-item(href='/home') Búsqueda
+      a.navbar-item(href='/products') Puestos
+      a.navbar-item(href='/products/all') Locatarios
+      a.navbar-item(href='/profile') Perfil
+      
+div
+
+section#about_us.gray_bg.section_padding
+  .container
+    .row
+      .col-md-6.col-sm-6.col-xs-12.wow.fadeInLeft
+        .about_content
+          span 
+          br
+          h2.is-size-3 ¿Tienes hambre de algo rápido?
+          br
+          br
+
+          span
+          img(src='https://image.flaticon.com/icons/svg/863/863175.svg' height='400' width='400' style='margin:10px auto; display:block;' align='center' alt='')
+
+          span
+          p
+            | HeyWero es tu opción. ¿Nunca has querido usar tu aplicación de mapas para
+            | encontrar esos tacos que te recomendaron? ¿Qué hay de las hamburguesas
+            | que todos en el colegio o en la oficina conocen? ¿No sabes cómo llegar
+            | porque Maps sólo te ofrece direcciones postales? Llegó para ti HeyWero. 
+          br
+
+          span
+          img(src='https://image.flaticon.com/icons/svg/1147/1147829.svg' height='400' width='400' style='margin:10px auto; display:block;' align='center' alt='')
+
+          span
+          p
+            | HeyWero es la aplicación web que te permitirá hallar ese puesto que te
+            | recomendaron que no te aparece en otras aplicaciones porque no tiene una
+            | dirección postal. Pero hay más.
+          br
+
+          span
+          img(src="https://image.flaticon.com/icons/svg/331/331455.svg" height='400' width='400' style='margin:10px auto; display:block;' align='center' alt='')
+
+          span
+          p
+            |Si eres dueño de un local, puedes registrar tu puesto y tu menú en HeyWero. 
+            |Así podrán hallarte tus clientes, además de nuevas personas. Listo, ya eres
+            |"tianwero". Pero hay más. 
+          br
+
+          span
+          img(src="https://image.flaticon.com/icons/svg/1533/1533553.svg" height='400' width='400' style='margin:10px auto; display:block;' align='center' alt='')
+          
+          span
+          p
+            |HeyWero es totalmente gratis. ¡Provecho!
+
+
