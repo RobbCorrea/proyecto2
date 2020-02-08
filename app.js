@@ -9,7 +9,7 @@ const path         = require('path');
 const session      = require("express-session");
 const MongoStore   = require("connect-mongo")(session);
 const passport     = require("./config/passport");
-const connectDB    = require('./config/database')
+const connectDB    = require('./config/database');
 connectDB();
 
 const app_name = require("./package.json").name;
